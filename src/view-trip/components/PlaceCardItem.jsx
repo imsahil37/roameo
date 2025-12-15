@@ -23,7 +23,7 @@ function PlaceCardItem({place}) {
   }
 
   return (
-    <Link to={'https://www.google.com/maps/search/?api=1&query=' +place?.place} target='_blank'>
+    <Link to={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place?.place)} target='_blank'>
     <div className='shadow-sm border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 hover:shadow-md cursor-pointer transition-all'>
         <img src={photoUrl?photoUrl:'/placeholder.jpg'} alt="" className='w-[130px] h-[130px] rounded-xl object-cover' />
         <div>
