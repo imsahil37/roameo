@@ -46,10 +46,10 @@ function CreateTrip() {
     const user = localStorage.getItem('user');
     if (!user) {
       setOpenDialog(true)
-      return;
+      return; // Ensure returns if no user
     }
 
-    if (formData?.noOfDAys > 5 && !formData?.location || !formData?.budget || !formData.traveler) {
+    if (formData?.noOfDays > 5 && !formData?.location || !formData?.budget || !formData.traveler) {
       toast('Please fill all the details')
       return;
     }
@@ -61,8 +61,6 @@ function CreateTrip() {
       .replace('{totalDays}', formData?.noOfDays)
       .replace('{traveler}', formData?.traveler)
       .replace('{budget}', formData?.budget)
-      .replace('{budget}', formData?.budget)
-      .replace('{totalDays}', formData?.noOfDays)
 
     // console.log(FINAL_PROMPT)
 

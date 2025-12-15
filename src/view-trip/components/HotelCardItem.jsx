@@ -21,7 +21,7 @@ function HotelCardItem({ hotel }) {
     }
 
     return (
-        <Link to={'https://www.google.com/maps/search/?api=1&query=' + hotel?.name + "," + hotel?.address} target='_blank'>
+        <Link to={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(hotel?.name + "," + hotel?.address)} target='_blank'>
 
             <div className='hover:scale-110 transition-all cursor-pointer mt-5 mb-8'>
                 <img src={photoUrl?photoUrl:'/placeholder.jpg'} className='rounded-xl h-[180px] w-full object-cover' />
